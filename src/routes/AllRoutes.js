@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { MovieDetail, MovieList, PageNotFound, Search } from "../pages/index";
+import { MovieDetail, MovieList, Search } from "../pages/index";
 
 import React from "react";
 
