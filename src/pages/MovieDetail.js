@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 export const MovieDetail = () => {
   const [movie, setMovie] = useState({});
 
   const params = useParams();
 
-  const url = `https://api.themoviedb.org/3/movie/${params.id}?`;
   const image_Path = "https://image.tmdb.org/t/p/w500";
   const movie_info = {
     id: movie.id,
@@ -18,6 +17,7 @@ export const MovieDetail = () => {
 
   useEffect(() => {
     async function fetchMovie() {
+      const url = `https://api.themoviedb.org/3/movie/${params.id}?`;
       const response = await fetch(
         url + "api_key=" + process.env.REACT_APP_API_KEY
       );
