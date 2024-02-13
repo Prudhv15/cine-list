@@ -33,8 +33,8 @@ export const Login = () => {
 
     // Check if both username and password are empty
     if (
-      !enteredUsername &&
-      !enteredPassword &&
+      enteredUsername === "" &&
+      enteredPassword === "" &&
       !usernameError &&
       !passwordError
     ) {
