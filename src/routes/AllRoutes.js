@@ -5,7 +5,7 @@ import React from "react";
 
 export const AllRoutes = () => {
   return (
-    <div className="dark:bg-slate-700">
+    <div className="dark:bg-rgb-800">
       <Routes>
         <Route
           path=""

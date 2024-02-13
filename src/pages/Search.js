@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Card } from "../components";
+
 export const Search = ({ apiPath }) => {
   const [searchParams] = useSearchParams();
   const queryTerm = searchParams.get("q");
+  console.log(queryTerm);
+  const [movies, setMovies] = useState([]);
 
-  const URL = `https://api.themoviedb.org/3/${apiPath}?api_key=${process.env.REACT_APP_API_KEY}&query={queryTerm}`;
-  const { data: movies } = fetch(URL);
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const URL = `https://api.themoviedb.org/3/${apiPath}?api_key=${process.env.REACT_APP_API_KEY}&query=${queryTerm}`;
+        const response = await fetch(URL);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchMovies();
+  }, [apiPath, queryTerm]);
 
   return (
     <main>

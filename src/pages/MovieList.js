@@ -30,7 +30,7 @@ export const MovieList = ({ apiPath, title }) => {
         ) : movies !== null && movies.length === 0 ? (
           <p>No movies available.</p>
         ) : (
-          <p>Loading...</p>
+          <p>Loading........</p>
         )}
       </div>
     </main>
