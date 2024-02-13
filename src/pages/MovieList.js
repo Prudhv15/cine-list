@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Header } from "../components/index";
 import { Card } from "../components";
 
 export const MovieList = ({ apiPath, title }) => {
@@ -23,6 +23,7 @@ export const MovieList = ({ apiPath, title }) => {
 
   return (
     <main>
+      <Header />
       <section className="max-w-7xl mx-auto py-7"></section>
       <div className="flex justify-start flex-wrap">
         {movies !== null && movies.length > 0 ? (

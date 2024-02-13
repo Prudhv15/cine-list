@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Card } from "../components";
+import { Card, Header } from "../components";
 
 export const Search = ({ apiPath }) => {
   const [searchParams] = useSearchParams();
@@ -26,7 +26,7 @@ export const Search = ({ apiPath }) => {
   return (
     <main>
       <section className="py-7">
-        <p className="text-3xl text-gray-700 dark:text-white">
+        <p className="text-3xl  mt-10 text-gray-700 dark:text-black">
           {movies.length === 0
             ? `No result found for '${queryTerm}'`
             : `Result for '${queryTerm}'`}

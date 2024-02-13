@@ -32,7 +32,12 @@ export const Login = () => {
     }
 
     // Check if both username and password are empty
-    if (!enteredUsername && !enteredPassword) {
+    if (
+      !enteredUsername &&
+      !enteredPassword &&
+      !usernameError &&
+      !passwordError
+    ) {
       alert("Please enter valid details");
     } else if (!usernameError && !passwordError) {
       // If both are valid, redirect to "now_playing"
@@ -41,7 +46,7 @@ export const Login = () => {
   }
 
   return (
-    <div className="flex max-w-sm mx-auto items-center justify-center h-screen">
+    <div className="flex max-w-sm mx-auto items-center justify-center h-screen ">
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleSubmit}
