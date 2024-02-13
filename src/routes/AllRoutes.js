@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { MovieDetail, MovieList, Search } from "../pages/index";
+import { MovieDetail, MovieList, Search, Login } from "../pages/index";
 
 import React from "react";
 
@@ -8,7 +8,7 @@ export const AllRoutes = () => {
     <div className="dark:bg-rgb-800">
       <Routes>
         <Route
-          path=""
+          path="now_playing"
           element={<MovieList apiPath="movie/now_playing" title="Home" />}
         />
         <Route
@@ -26,6 +26,7 @@ export const AllRoutes = () => {
           element={<MovieList apiPath="movie/upcoming" title="Upcoming" />}
         />
         <Route path="search" element={<Search apiPath="search/movie" />} />
+        <Route path="" element={<Login apiPath="login" />} />
       </Routes>
     </div>
   );
