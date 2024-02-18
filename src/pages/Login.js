@@ -8,13 +8,22 @@ export const Login = () => {
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
+  const [hardcodedLoginDetails] = useState({
+    username: "something",
+    password: "******",
+  });
+
+  function handleUsernameFocus() {
+    usernameRef.current.value = hardcodedLoginDetails.username;
+    passRef.current.value = hardcodedLoginDetails.password;
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     const enteredUsername = usernameRef.current.value;
     const enteredPassword = passRef.current.value;
 
-    console.log("Entered username:", enteredUsername, enteredPassword);
     if (enteredUsername.length < 5) {
       setUsernameError(
         "Username is required and must be at least 5 characters long."
@@ -31,7 +40,6 @@ export const Login = () => {
       setPasswordError("");
     }
 
-    // Check if both username and password are empty
     if (
       enteredUsername === "" &&
       enteredPassword === "" &&
@@ -65,6 +73,7 @@ export const Login = () => {
             placeholder="Username"
             name="username"
             ref={usernameRef}
+            onFocus={handleUsernameFocus} // Call handleUsernameFocus when focused
           />
           {usernameError && (
             <p className="text-red-500 text-xs italic">{usernameError}</p>

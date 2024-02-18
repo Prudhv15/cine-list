@@ -43,6 +43,7 @@ export const AllRoutes = () => {
           path="movies/upcoming"
           element={
             <>
+              <Header />
               <MovieList apiPath="movie/upcoming" title="Upcoming" /> <Footer />
             </>
           }
