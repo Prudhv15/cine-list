@@ -6,7 +6,7 @@ export function Footer() {
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link
-            to="http://localhost:3000"
+            to="https://cine-list0.netlify.app/"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
             <img
@@ -42,9 +42,12 @@ export function Footer() {
           </ul>
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
-            <a href="http://localhost:3000" className="hover:underline">
+            <Link
+              to="https://cine-list0.netlify.app/now_playing"
+              className="hover:underline"
+            >
               CineVibe™
-            </a>
+            </Link>
             . All Rights Reserved.
           </span>
         </div>
